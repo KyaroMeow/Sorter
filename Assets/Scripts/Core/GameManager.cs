@@ -116,7 +116,8 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayAgree();
         lights.ChangeColorGreen();
         itemsSorted++;
-        if (currentItem!= null)Destroy(currentItem);
+        if (currentItem != null) Destroy(currentItem);
+        playerInteract.DropItem();
         SpawnItem();
     }
     public void WrongSort()
