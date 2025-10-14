@@ -55,12 +55,14 @@ MonoBehaviour:
   isDefective: 0
   isSorted: 0
   hasBarcode: 1
+  hasScratches: 1
   barcodeShowsGood: 1
   hasUVStain: 0
   stainSpots:
   - {fileID: 5308709247845550844}
   - {fileID: 4244145803665109851}
   - {fileID: 7339291844486886593}
+  scratches: []
   stainRenderer: {fileID: 0}
   barcode: {fileID: 5257165417207915197}
 --- !u!54 &8904108004682629160

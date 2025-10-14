@@ -39,9 +39,11 @@ public class ItemSpawner : MonoBehaviour
 
         // 1. Определяем есть ли пятно (главный дефект)
         bool hasStain = Random.Range(0f, 1f) <= SettingManager.Instance.defectChance;
-        
+
         // 2. Определяем есть ли штрихкод
         bool hasBarcode = Random.Range(0f, 1f) > SettingManager.Instance.noBarcodeChance;
+        
+        bool hasScratches = Random.Range(0f, 1f) > SettingManager.Instance.scratchesChance;
         
         // 3. Определяем что показывает штрихкод
         bool barcodeShowsGood = true;
@@ -53,9 +55,9 @@ public class ItemSpawner : MonoBehaviour
 
         // 4. Определяем общий статус defective
         // Предмет считается defective если у него есть пятно ИЛИ штрихкод врет
-        bool isDefective = hasStain || (hasBarcode && !barcodeShowsGood);
+        bool isDefective = hasStain || (hasBarcode && !barcodeShowsGood) || !hasBarcode || hasScratches;
 
-        item.InitializeItem(isDefective, hasBarcode, barcodeShowsGood, hasStain);
+        item.InitializeItem(isDefective, hasBarcode, barcodeShowsGood, hasStain, hasScratches);
     }
 
 }

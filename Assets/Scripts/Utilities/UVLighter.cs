@@ -9,7 +9,7 @@ public class UVLighter : MonoBehaviour
     public void ToggleLighterOff()
     {
         lighter.SetActive(false);
-        GameManager.Instance.currentItem.GetComponent<Item>().SetUVVisibility(false);
+        if(GameManager.Instance.currentItem!=null)GameManager.Instance.currentItem.GetComponent<Item>().SetUVVisibility(false);
         uVOnTable.SetActive(false);
     }
     public void ToggleLighter()

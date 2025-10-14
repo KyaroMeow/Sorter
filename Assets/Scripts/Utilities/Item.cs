@@ -9,19 +9,22 @@ public class Item : MonoBehaviour
     public bool isSorted = false;
     [Header("Features")]
     public bool hasBarcode = true; 
+    public bool hasScratches = true; 
     public bool barcodeShowsGood = true; 
     public bool hasUVStain = false;
 
     [Header("UV Properties")]
     public List<GameObject> stainSpots = new List<GameObject>();
+    public GameObject[] scratches;
     public Renderer stainRenderer;
     public GameObject barcode;
-    public void InitializeItem(bool defective, bool barcode, bool barcodeGood, bool stain)
+    public void InitializeItem(bool defective, bool barcode, bool barcodeGood, bool stain, bool Scratches)
     {
         isDefective = defective;
         hasBarcode = barcode;
         barcodeShowsGood = barcodeGood;
         hasUVStain = stain;
+        hasScratches = Scratches;
         
         UpdateVisuals();
     }
@@ -31,7 +34,12 @@ public class Item : MonoBehaviour
         {
             barcode.SetActive(hasBarcode);
         }
-        
+
+        if (hasScratches)
+        {
+            SetScratchesVisibility();
+        }
+
         if (hasUVStain && stainSpots.Count > 0)
         {
             int randomIndex = Random.Range(0, stainSpots.Count);
@@ -49,6 +57,16 @@ public class Item : MonoBehaviour
             foreach (GameObject stain in stainSpots)
             {
                 if (stain != null) stain.SetActive(false);
+            }
+        }
+    }
+    public void SetScratchesVisibility()
+    {
+        if (scratches != null)
+        {
+            foreach(GameObject sharp in scratches)
+            {
+                sharp.SetActive(true);
             }
         }
     }

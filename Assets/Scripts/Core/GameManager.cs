@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     [Header("Current Game State")]
     public GameObject currentItem;
     public int currentMistakes = 0;
-    public int itemsSorted = 0;
     public int totalItemsProcessed = 0;
     public float currentTime = 0;
     public bool isGameActive = true;
@@ -96,7 +95,6 @@ public class GameManager : MonoBehaviour
     {
         if (currentItem == null) return;
         hands.PlayPressButton();
-        totalItemsProcessed++;
         bool itemVariant = currentItem.GetComponent<Item>().isDefective;
         if (selectedVariant == itemVariant)
         {
@@ -115,9 +113,10 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.Instance.PlayAgree();
         lights.ChangeColorGreen();
-        itemsSorted++;
+        totalItemsProcessed++;
         if (currentItem != null) Destroy(currentItem);
         playerInteract.DropItem();
+        StartTimer();
         SpawnItem();
     }
     public void WrongSort()
@@ -125,6 +124,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayDisAgree();
         lights.ChangeColorRed();
         playerInteract.DropItem();
+        totalItemsProcessed++;
         currentMistakes++;
         CheckForDamage();
         if (currentMistakes > SettingManager.Instance.maxMistakes)
@@ -186,6 +186,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         Time.timeScale = 1f;
+        AudioListener.pause = false;
     }
     public void StopConveyor()
     {

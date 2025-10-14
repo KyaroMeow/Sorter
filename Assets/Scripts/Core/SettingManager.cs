@@ -15,6 +15,7 @@ public class SettingManager : MonoBehaviour
     public float noBarcodeChance;
     public float wrongBarcodeChance;
     public float defectChance;
+    public float scratchesChance;
     public bool timer;
     public string currentDifficulty;
     private void Awake()
@@ -43,6 +44,7 @@ public class SettingManager : MonoBehaviour
         {
             case "Easy":
                 currentDifficulty = "Easy";
+                scratchesChance = 0.4f;
                 wrongBarcodeChance = 0.2f;
                 defectChance = 0.4f;
                 noBarcodeChance = 0.4f;
@@ -53,6 +55,7 @@ public class SettingManager : MonoBehaviour
                 break;
             case "Normal":
                 currentDifficulty = "Normal";
+                scratchesChance = 0.4f;
                 wrongBarcodeChance = 0.4f;
                 defectChance = 0.5f;
                 noBarcodeChance = 0.3f;
@@ -63,6 +66,7 @@ public class SettingManager : MonoBehaviour
                 break;
             case "Hard":
                 currentDifficulty = "Hard";
+                scratchesChance = 0.5f;
                 wrongBarcodeChance = 0.7f;
                 defectChance = 0.6f;
                 noBarcodeChance = 0.3f;

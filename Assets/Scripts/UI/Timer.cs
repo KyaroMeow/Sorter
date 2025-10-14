@@ -11,12 +11,12 @@ public class Timer : MonoBehaviour
     {
         UpdateTime();
     }
-    private void UpdateTime() 
-{
-    if (GameManager.Instance != null && timerText != null)
+    private void UpdateTime()
     {
-        int seconds = Mathf.CeilToInt(GameManager.Instance.currentTime);
-        timerText.text = seconds.ToString();
+        if (GameManager.Instance != null && timerText != null)
+        {
+            int seconds = Mathf.CeilToInt(GameManager.Instance.currentTime);
+            timerText.text = seconds.ToString();
+        }
     }
-}
 }
