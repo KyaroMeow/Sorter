@@ -80,10 +80,14 @@ MonoBehaviour:
   isDefective: 0
   isSorted: 0
   hasBarcode: 1
+  hasScratches: 1
   barcodeShowsGood: 1
   hasUVStain: 0
   stainSpots:
   - {fileID: 2289551925462883589}
+  scratches:
+  - {fileID: 3060277135662607376}
+  - {fileID: 5453691609775903166}
   stainRenderer: {fileID: 0}
   barcode: {fileID: 3483181784574665884}
 --- !u!1001 &2522990977489417733
@@ -164,6 +168,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6933019918345776960, guid: 1559cd391d01b4346b393654183589ac, type: 3}
   m_PrefabInstance: {fileID: 2522990977489417733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5453691609775903166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7542422661356136379, guid: 1559cd391d01b4346b393654183589ac, type: 3}
+  m_PrefabInstance: {fileID: 2522990977489417733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4815571370254945195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240,6 +249,11 @@ PrefabInstance:
 --- !u!4 &2513941286082536683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6933019918345776960, guid: 1559cd391d01b4346b393654183589ac, type: 3}
+  m_PrefabInstance: {fileID: 4815571370254945195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3060277135662607376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7542422661356136379, guid: 1559cd391d01b4346b393654183589ac, type: 3}
   m_PrefabInstance: {fileID: 4815571370254945195}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6411628412625093415

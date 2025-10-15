@@ -168,6 +168,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1559cd391d01b4346b393654183589ac, type: 3}
+--- !u!1 &5902431455970528988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7542422661356136379, guid: 1559cd391d01b4346b393654183589ac, type: 3}
+  m_PrefabInstance: {fileID: 4126906196232382823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6445424796443280935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6933019918345776960, guid: 1559cd391d01b4346b393654183589ac, type: 3}
@@ -253,6 +258,11 @@ PrefabInstance:
 --- !u!4 &3490774032812494369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6933019918345776960, guid: 1559cd391d01b4346b393654183589ac, type: 3}
+  m_PrefabInstance: {fileID: 5784504967901962593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4101268446039918298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7542422661356136379, guid: 1559cd391d01b4346b393654183589ac, type: 3}
   m_PrefabInstance: {fileID: 5784504967901962593}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8191130348706018276
@@ -456,10 +466,14 @@ MonoBehaviour:
   isDefective: 0
   isSorted: 0
   hasBarcode: 1
+  hasScratches: 1
   barcodeShowsGood: 1
   hasUVStain: 0
   stainSpots:
   - {fileID: 1801629884535411807}
+  scratches:
+  - {fileID: 5902431455970528988}
+  - {fileID: 4101268446039918298}
   stainRenderer: {fileID: 0}
   barcode: {fileID: 6485371177639587629}
 --- !u!54 &5208961951518896240
