@@ -9,8 +9,8 @@ public class SettingButtons : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diffText;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Slider volumeSlider;
-    private string[] difficulties = { "Easy", "Normal", "Hard" };
-    private string[] timerState = { "On", "Off" };
+    private string[] difficulties = { "EASY", "NORMAL", "HARD" };
+    private string[] timerState = { "ON", "OFF" };
     private int currentDiffIndex = 1;
     private int currentTimerIndex = 0;
 

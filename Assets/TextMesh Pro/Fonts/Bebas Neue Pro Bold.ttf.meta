@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c8b8ed4fb2695d468b007335f3991ad
+guid: bf56d890e4c1fdb4cb954dc16d8a4bbf
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Bahnschrift
+  - Bebas Neue Pro
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

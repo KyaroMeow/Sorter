@@ -32,7 +32,7 @@ public class SettingManager : MonoBehaviour
     }
     void Start()
     {
-        SetDifficult("Normal");
+        SetDifficult("NORMAL");
     }
     void Update()
     {
@@ -42,8 +42,8 @@ public class SettingManager : MonoBehaviour
     {
         switch (diffName)
         {
-            case "Easy":
-                currentDifficulty = "Easy";
+            case "EASY":
+                currentDifficulty = "EASY";
                 scratchesChance = 0.4f;
                 wrongBarcodeChance = 0.2f;
                 defectChance = 0.4f;
@@ -53,8 +53,8 @@ public class SettingManager : MonoBehaviour
                 timePerItem = 90f;
                 maxMistakes = 15;
                 break;
-            case "Normal":
-                currentDifficulty = "Normal";
+            case "NORMAL":
+                currentDifficulty = "NORMAL";
                 scratchesChance = 0.4f;
                 wrongBarcodeChance = 0.4f;
                 defectChance = 0.5f;
@@ -64,8 +64,8 @@ public class SettingManager : MonoBehaviour
                 timePerItem = 60f;
                 maxMistakes = 10;
                 break;
-            case "Hard":
-                currentDifficulty = "Hard";
+            case "HARD":
+                currentDifficulty = "HARD";
                 scratchesChance = 0.5f;
                 wrongBarcodeChance = 0.7f;
                 defectChance = 0.6f;
