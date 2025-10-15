@@ -37,28 +37,50 @@ public class ItemSpawner : MonoBehaviour
         Item item = itemObject.GetComponent<Item>();
         if (item == null) return;
 
-        // 1. Определяем есть ли пятно (главный дефект)
-        bool hasStain = Random.Range(0f, 1f) <= SettingManager.Instance.defectChance;
-
-        // 2. Определяем есть ли штрихкод
-        bool hasBarcode = Random.Range(0f, 1f) > SettingManager.Instance.noBarcodeChance;
-        
-        bool hasScratches = Random.Range(0f, 1f) > SettingManager.Instance.scratchesChance;
-        
-        // 3. Определяем что показывает штрихкод
+        bool hasStain = false;
+        bool hasBarcode = true;
         bool barcodeShowsGood = true;
-        if (hasBarcode)
+        bool hasScratches = false;
+
+        // Каждый дефект проверяется независимо
+        float roll = Random.Range(0f, 1f);
+
+        // Пятно
+        if (roll <= SettingManager.Instance.defectChance)
         {
-            // Штрихкод может показывать неверную информацию
-            barcodeShowsGood = Random.Range(0f, 1f) > SettingManager.Instance.wrongBarcodeChance;
+            hasStain = true;
         }
 
-        // 4. Определяем общий статус defective
-        // Предмет считается defective если у него есть пятно ИЛИ штрихкод врет
-        bool isDefective = hasStain || (hasBarcode && !barcodeShowsGood) || !hasBarcode || hasScratches;
+        // Отсутствие штрихкода
+        roll = Random.Range(0f, 1f);
+        if (roll <= SettingManager.Instance.noBarcodeChance)
+        {
+            hasBarcode = false;
+        }
+
+        // Неправильный штрихкод (только если штрихкод есть)
+        if (hasBarcode)
+        {
+            roll = Random.Range(0f, 1f);
+            if (roll <= SettingManager.Instance.wrongBarcodeChance)
+            {
+                barcodeShowsGood = false;
+            }
+        }
+
+        // Царапины
+        roll = Random.Range(0f, 1f);
+        if (roll <= SettingManager.Instance.scratchesChance)
+        {
+            hasScratches = true;
+        }
+
+        // Предмет дефектный если есть хотя бы один дефект
+        bool isDefective = hasStain || !hasBarcode || !barcodeShowsGood || hasScratches;
 
         item.InitializeItem(isDefective, hasBarcode, barcodeShowsGood, hasStain, hasScratches);
     }
+
 
 }
     

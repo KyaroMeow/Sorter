@@ -52,7 +52,6 @@ public class SettingButtons : MonoBehaviour
         SettingManager.Instance.volumeValue = volumeSlider.value;
         if (currentTimerIndex == 0)
         {
-
             SettingManager.Instance.timer = true;
         }
         else

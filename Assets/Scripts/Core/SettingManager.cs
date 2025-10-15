@@ -44,10 +44,10 @@ public class SettingManager : MonoBehaviour
         {
             case "EASY":
                 currentDifficulty = "EASY";
-                scratchesChance = 0.01f;
-                wrongBarcodeChance = 0.01f;
-                defectChance = 0.01f;
-                noBarcodeChance = 0.01f;
+                scratchesChance = 0.2f;
+                wrongBarcodeChance = 0.1f;
+                defectChance = 0.1f;
+                noBarcodeChance = 0.1f;
                 anomalyItemNum = 10;
                 BombNum = 20;
                 timePerItem = 90f;
@@ -55,10 +55,10 @@ public class SettingManager : MonoBehaviour
                 break;
             case "NORMAL":
                 currentDifficulty = "NORMAL";
-                scratchesChance = 0.01f;
-                wrongBarcodeChance = 0.01f;
-                defectChance = 0.01f;
-                noBarcodeChance = 0.01f;
+                scratchesChance = 0.1f;
+                wrongBarcodeChance = 0.1f;
+                defectChance = 0.1f;
+                noBarcodeChance = 0.1f;
                 anomalyItemNum = 20;
                 BombNum = 40;
                 timePerItem = 60f;
@@ -66,10 +66,10 @@ public class SettingManager : MonoBehaviour
                 break;
             case "HARD":
                 currentDifficulty = "HARD";
-                scratchesChance = 0.5f;
-                wrongBarcodeChance = 0.7f;
-                defectChance = 0.6f;
-                noBarcodeChance = 0.3f;
+                scratchesChance = 0.3f;
+                wrongBarcodeChance = 0.2f;
+                defectChance = 0.1f;
+                noBarcodeChance = 0.1f;
                 anomalyItemNum = 30;
                 BombNum = 50;
                 timePerItem = 30f;
