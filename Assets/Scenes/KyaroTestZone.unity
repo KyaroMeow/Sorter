@@ -9699,6 +9699,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 75ed30977047f4a488078570ad968ef4, type: 2}
     - target: {fileID: 1332312604189411200, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: The Eye Tool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332312604189411200, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9811,6 +9815,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 806097100}
     - target: {fileID: 3168644649431990266, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: Spots
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168644649431990266, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 6dbb7d7c30a46e5418e0c351a8b52e91, type: 2}
@@ -9824,21 +9832,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3879549065064961319, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_text
-      value: "\u0418\u043D\u043E\u0433\u0434\u0430 \u0431\u044B\u0432\u0430\u0435\u0442
-        \u0442\u0430\u043A\u043E\u0435, \u0447\u0442\u043E \u043F\u0440\u0438 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0435
-        \u0442\u043E\u0432\u0430\u0440 \u0437\u0430\u043F\u0430\u0447\u043A\u0430\u043B\u0441\u044F,
-        \u0438 \u0442\u0430\u043A\u043E\u0439 \u0442\u043E\u0432\u0430\u0440 \u043D\u0438\u043A\u0430\u043A
-        \u043D\u0435\u043B\u044C\u0437\u044F \u043F\u0440\u043E\u0434\u0430\u0432\u0430\u0442\u044C
-        \u043D\u0430\u0448\u0438\u043C \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u044B\u043C
-        \u043F\u043E\u043A\u0443\u043F\u0430\u0442\u0435\u043B\u044F\u043C.\n\n\u0414\u043B\u044F
-        \u0442\u043E\u0433\u043E \u0447\u0442\u043E\u0431\u044B \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C,
-        \u0435\u0441\u0442\u044C \u043B\u0438 [\u043F\u044F\u0442\u043D\u0430] \u043D\u0430
-        \u0442\u043E\u0432\u0430\u0440\u0435, \u043D\u0443\u0436\u043D\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
-        [\u0443\u043B\u044C\u0442\u0440\u0430\u0444\u0438\u043E\u043B\u0435\u0442\u043E\u0432\u044B\u0439
-        \u0444\u043E\u043D\u0430\u0440\u044C]. \u0421\u0442\u0430\u0440\u0430\u0442\u0435\u043B\u044C\u043D\u043E
-        \u043E\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0439\u0442\u0435
-        \u0442\u043E\u0432\u0430\u0440\u044B \u043D\u0430 \u043D\u0430\u043B\u0438\u0447\u0438\u0435
-        \u043F\u044F\u0442\u0435\u043D."
+      value: 'Sometimes it happens that the product gets dirty during delivery, and
+        such a product cannot be sold to our excellent customers in any way.
+
+        
+
+        In
+        order to determine if there are [stains] on the product, you need to use
+        [an ultraviolet lamp]. Carefully inspect the goods for stains.'
       objectReference: {fileID: 0}
     - target: {fileID: 3879549065064961319, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_margin.x
@@ -9866,26 +9867,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4097325728893336966, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_text
-      value: "\u041D\u0430\u0448\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F
-        \u043E\u0447\u0435\u043D\u044C \u0441\u0442\u0430\u0440\u0430\u0442\u0435\u043B\u044C\u043D\u043E
-        \u0441\u043B\u0435\u0434\u0438\u0442 \u0437\u0430 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E\u043C
-        \u043D\u0430\u0448\u0438\u0445 \u0442\u043E\u0432\u0430\u0440\u043E\u0432,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u043F\u0440\u043E\u0441\u0438\u043C
-        \u0438 \u0432\u0430\u0441 \u0441\u043B\u0435\u0434\u0438\u0442\u044C \u0437\u0430
-        \u044D\u0442\u0438\u043C!\r\n\r\n\u0411\u0440\u0430\u043A \u043E\u0442\u043B\u0438\u0447\u0438\u0442\u044C
-        \u043E\u0447\u0435\u043D\u044C \u043F\u0440\u043E\u0441\u0442\u043E, \u0435\u0441\u043B\u0438
-        \u0432\u044B \u043D\u0435 \u0441\u043B\u0435\u043F\u043E\u0439 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A.
-        \u0415\u0441\u0442\u044C \u0442\u0440\u0438 \u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0445
-        \u043A\u0440\u0438\u0442\u0435\u0440\u0438\u044F: [\u043F\u043E\u0432\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u044F],
-        [\u043F\u044F\u0442\u043D\u0430] \u0438 [\u043B\u0435\u0433\u0438\u0442\u0438\u043C\u043D\u043E\u0441\u0442\u044C].
-        \u0415\u0441\u043B\u0438 \u0445\u043E\u0442\u044F\u0431\u044B \u0447\u0442\u043E-\u0442\u043E
-        \u0438\u0437 \u044D\u0442\u043E\u0433\u043E \u043D\u0435 \u0442\u0430\u043A,
-        \u0442\u043E \u044D\u0442\u043E \u0431\u0440\u0430\u043A! \u0412\u0430\u043C
-        \u043E\u0441\u0442\u0430\u043D\u0435\u0442\u0441\u044F \u0442\u043E\u043B\u044C\u043A\u043E
-        \u0438\u0437\u0431\u0430\u0432\u0438\u0442\u0441\u044F \u043E\u0442 \u043D\u0435\u0433\u043E,
-        \u043E\u0442\u043C\u0435\u0442\u0438\u0432 \u0431\u0440\u0430\u043A \u043D\u0430
-        \u0434\u0438\u0441\u043F\u043B\u0435\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
-        \u041F\u041A."
+      value: 'Our company is very diligent about the quality of our products, so
+        we ask you to keep an eye on it!
+
+        
+
+        Marriage is very easy
+        to distinguish if you are not a blind employee. There are three main criteria:
+        [damages], [stains] and [legitimacy]. If any of this is wrong, then it''s
+        marriage! All you have to do is get rid of it by marking the defect on your
+        PC''s display.'
       objectReference: {fileID: 0}
     - target: {fileID: 4097325728893336966, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_margin.w
@@ -9902,6 +9893,10 @@ PrefabInstance:
     - target: {fileID: 4097325728893336966, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100029338416544504, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: Damage
       objectReference: {fileID: 0}
     - target: {fileID: 4100029338416544504, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
@@ -9932,6 +9927,10 @@ PrefabInstance:
       value: 0.093
       objectReference: {fileID: 0}
     - target: {fileID: 4440104887447298242, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: Legitimacy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440104887447298242, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 6dbb7d7c30a46e5418e0c351a8b52e91, type: 2}
@@ -9947,6 +9946,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d47cfe3d191ac9a46859bb6b29994db3, type: 3}
+    - target: {fileID: 4601448436539504679, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: Welcome to Amaron
+      objectReference: {fileID: 0}
     - target: {fileID: 4601448436539504679, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_margin.x
       value: 0.29138327
@@ -9973,15 +9976,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855036707956307760, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_text
-      value: "\u041E\u0447\u0435\u0432\u0438\u0434\u043D\u043E, \u0447\u0442\u043E
-        \u043F\u043E\u0432\u0440\u0435\u0436\u0434\u0435\u043D\u043D\u044B\u0435
-        \u0442\u043E\u0432\u0430\u0440\u044B \u043D\u0430\u043C \u0442\u043E\u0436\u0435
-        \u043D\u0435 \u043D\u0443\u0436\u043D\u044B, \u043F\u043E\u044D\u0442\u043E\u043C\u0443
-        \u0431\u0443\u0434\u044C\u0442\u0435 \u0432\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u043C\u0438
-        \u0438 \u0441\u043B\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 \u0442\u0435\u043C,
-        \u0447\u0442\u043E\u0431\u044B \u043D\u0435 \u0431\u044B\u043B\u043E \u043D\u0438
-        \u0435\u0434\u0438\u043D\u043E\u0433\u043E \u043F\u043E\u0432\u0440\u0435\u0436\u0434\u0435\u043D\u0438\u044F
-        \u0442\u043E\u0432\u0430\u0440\u0430."
+      value: Obviously, we do not need damaged goods either, so be careful and make
+        sure that there is not a single damage to the goods.
       objectReference: {fileID: 0}
     - target: {fileID: 4855036707956307760, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_margin.w
@@ -10013,13 +10009,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5166058787220042087, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_text
-      value: "\u0412\u0430\u0448\u0430 \u0417\u0430\u0434\u0430\u0447\u0430 \u2014
-        \u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B
-        \u0434\u043B\u044F \u043D\u0430\u0448\u0435\u0439 \u0441\u043E\u0431\u0438\u0440\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0439
-        \u043A\u0430\u043C\u043F\u0430\u043D\u0438\u0438, \u043F\u0440\u043E\u0441\u0438\u043C
-        \u0432\u0430\u0441 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F
-        \u0441 \u0438\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044F\u043C\u0438,
-        \u0441\u043F\u0430\u0441\u0438\u0431\u043E!"
+      value: Your task is to sort the items for our collection campaign, please read
+        the instructions, thank you!
       objectReference: {fileID: 0}
     - target: {fileID: 5166058787220042087, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontSize
@@ -10095,32 +10086,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5845850405066057550, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_text
-      value: "\u041C\u044B \u0433\u043E\u0440\u0434\u0438\u043C\u0441\u044F \u0442\u0435\u043C,
-        \u043A\u0430\u043A \u0431\u044B\u0441\u0442\u0440\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442
-        \u043D\u0430\u0448\u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u0438,
-        \u0434\u0430 \u0435\u0449\u0435 \u0438 \u0441 \u043A\u0430\u043A\u0438\u043C
-        \u044D\u043D\u0442\u0443\u0437\u0438\u0430\u0437\u043C\u043E\u043C. \u0414\u043B\u044F
-        \u0442\u043E\u0433\u043E \u0447\u0442\u043E\u0431\u044B \u0432\u0441\u0435
-        \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u0438 \u0441\u0442\u0440\u0435\u043C\u0438\u043B\u0438\u0441\u044C
-        \u0442\u043E\u043B\u044C\u043A\u043E \u043A \u043B\u0443\u0447\u0448\u0435\u043C\u0443,
-        \u043C\u044B \u0432\u044B\u0441\u0447\u0438\u0442\u0430\u043B\u0438, \u0441\u043A\u043E\u043B\u044C\u043A\u043E
-        \u0443\u0445\u043E\u0434\u0438\u0442 \u0432 \u0441\u0440\u0435\u0434\u043D\u0435\u043C
-        \u043D\u0430 \u043A\u0430\u0436\u0434\u044B\u0439 \u0442\u043E\u0432\u0430\u0440,
-        \u0438 \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u043B\u0438
-        \u0443 \u0432\u0430\u0441 [\u0442\u0430\u0439\u043C\u0435\u0440], \u043A\u043E\u0442\u043E\u0440\u044B\u0439
-        \u043E\u0431\u043D\u043E\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0441
-        \u043E\u0442\u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u043E\u0439
-        \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u0430.
-        \u041C\u044B \u043E\u0447\u0435\u043D\u044C \u0443\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E
-        \u043F\u0440\u043E\u0441\u0438\u043C \u0432\u0430\u0441 \u043D\u0435 \u043B\u0435\u043D\u0438\u0442\u044C\u0441\u044F
-        \u0438 \u0443\u0441\u043F\u0435\u0432\u0430\u0442\u044C \u0437\u0430 \u0442\u0430\u0439\u043C\u0435\u0440\u043E\u043C,
-        \u0438\u043D\u0430\u0447\u0435 \u043D\u0430\u043C \u043F\u0440\u0438\u0434\u0435\u0442\u0441\u044F
-        \u0441 \u0432\u0430\u043C\u0438 \u0440\u0430\u0441\u0441\u0442\u0430\u0442\u044C\u0441\u044F.\n\n\u041D\u0430\u0436\u0430\u0432
-        \u0434\u0430\u043B\u0435\u0435 \u0432\u044B \u043D\u0430\u0447\u043D\u0435\u0442\u0435
-        \u0432\u0430\u0448\u0443 \u0440\u0430\u0431\u043E\u0442\u0443.\n\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u044C
-        \u043F\u0440\u0435\u0434\u043C\u0435\u0442 \u043E\u0431\u0440\u0430\u0442\u043D\u043E
-        \u043C\u043E\u0436\u043D\u043E \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
-        [ E ]"
+      value: 'We are proud of how fast our employees work, and with what enthusiasm.
+        In order for all employees to strive only for the best, we calculated how
+        much it takes on average for each product, and therefore we set a timer for
+        you, which is updated with the sorting of each item. We kindly ask you not
+        to be lazy and keep up with the timer, otherwise we will have to part with
+        you.
+
+        
+
+        Clicking next will start your work.
+
+        
+
+        You
+        can put the item back on the [ E ] key.'
       objectReference: {fileID: 0}
     - target: {fileID: 5845850405066057550, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_margin.x
@@ -10143,6 +10123,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6335172008345231642, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: The Scanner Tool
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335172008345231642, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10150,6 +10134,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6443914007099449033, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: The Ultra Purple Lantern Tool
+      objectReference: {fileID: 0}
     - target: {fileID: 6443914007099449033, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -10184,17 +10172,9 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 72983f817c23ba84aa9a8c399e5a3455, type: 3}
     - target: {fileID: 6938173881014911774, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_text
-      value: "\u0412\u0441\u0435 \u043D\u0430\u0448\u0438 \u0442\u043E\u0432\u0430\u0440\u044B
-        \u0434\u043E\u043B\u0436\u043D\u044B \u0431\u044B\u0442\u044C \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u043C\u0438
-        \u0438 \u043E\u0431\u043E\u0437\u043D\u0430\u0447\u0435\u043D\u044B \u0432
-        \u043D\u0430\u0448\u0435\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u0435,
-        \u0434\u043B\u044F \u0442\u043E\u0433\u043E \u0447\u0442\u043E\u0431\u044B
-        \u0432 \u044D\u0442\u043E\u043C \u0443\u0431\u0435\u0434\u0438\u0442\u044C\u0441\u044F,
-        \u043A\u0430\u0436\u0434\u044B\u0439 \u0442\u043E\u0432\u0430\u0440 \u043E\u0431\u044F\u0437\u0430\u043D
-        \u0431\u044B\u0442\u044C \u043E\u0431\u043E\u0437\u043D\u0430\u0447\u0435\u043D
-        \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u043C [\u0448\u0442\u0440\u0438\u0445\u043A\u043E\u0434\u043E\u043C],
-        \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0439\u0442\u0435
-        \u0435\u0433\u043E \u043D\u0430\u043B\u0438\u0447\u0438\u0435 \u0438 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0441\u0442\u044C."
+      value: All our products must be active and marked in our system. In order to
+        make sure of this, each product must be marked with the correct [barcode],
+        be sure to check its availability and correctness.
       objectReference: {fileID: 0}
     - target: {fileID: 6938173881014911774, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_margin.z
@@ -10223,6 +10203,10 @@ PrefabInstance:
     - target: {fileID: 7346337638697050173, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.6316
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679286491670494877, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
+      propertyPath: m_text
+      value: Time
       objectReference: {fileID: 0}
     - target: {fileID: 7679286491670494877, guid: d63579e2355812d43ac0d0dc6c8f9b83, type: 3}
       propertyPath: m_fontAsset
