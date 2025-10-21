@@ -9,11 +9,14 @@ public class StartCutscene : MonoBehaviour
     public class CutsceneSlide
     {
         public Sprite slide;
-        public float duration = 3f;
+        public float fadeInDuration = 1f;
     }
 
     [Header("CUTSCENE SETTINGS")]
     public CutsceneSlide[] slides;
+    [SerializeField] private string[] dialogue1;
+    [SerializeField] private string[] dialogue2;
+    public StartDialog startDialog;
     
     [Header("AUDIO SETTINGS")]
     public AudioClip firstAudioClip;
@@ -33,18 +36,21 @@ public class StartCutscene : MonoBehaviour
     private int currentSlide = 0;
     private bool firstSoundPlayed = false;
     private bool secondSoundPlayed = false;
+    private bool waitingForInput = false;
 
     void Start()
     {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            StartCoroutine(PlayCutscene());
+        audioSource = gameObject.AddComponent<AudioSource>();
+        StartCoroutine(PlayCutscene());
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Обрабатываем нажатие только когда ждем ввода
+        if (waitingForInput && Input.GetMouseButtonDown(0))
         {
-            SkipToNext();
+            waitingForInput = false;
+            ShowNextSlide();
         }
     }
 
@@ -54,45 +60,44 @@ public class StartCutscene : MonoBehaviour
         displayImage.color = Color.black;
         displayImage.sprite = null;
 
-        // Показываем все слайды по порядку
-        for (int i = 0; i < slides.Length; i++)
-        {
-            // Плавный переход от черного к слайду
-            yield return StartCoroutine(FadeFromBlackToSlide(slides[i].slide));
-            
-            // Проверяем нужно ли начать проигрывать первый звук
-            if (!firstSoundPlayed && i >= firstSoundStartSlide)
-            {
-                PlayFirstSound();
-                firstSoundPlayed = true;
-            }
-            
-            // Проверяем нужно ли начать проигрывать второй звук
-            if (!secondSoundPlayed && i >= secondSoundStartSlide)
-            {
-                PlaySecondSound();
-                secondSoundPlayed = true;
-            }
-            
-            // Ждем указанное для этого слайда время
-            yield return new WaitForSeconds(slides[i].duration);
-            
-            // Плавный переход к черному (кроме последнего слайда)
-            if (i < slides.Length - 1)
-            {
-                yield return StartCoroutine(FadeToBlack());
-            }
-        }
-
-        // Финальный переход к черному в конце
-        yield return StartCoroutine(FadeToBlack());
-        yield return new WaitForSeconds(0.5f);
+        // Показываем первый слайд
+        yield return StartCoroutine(FadeFromBlackToSlide(slides[0].slide));
         
-        // Разтемнение к прозрачному
-        yield return StartCoroutine(FadeFromBlackToClear());
+        // Проверяем звуки для первого слайда
+        CheckAndPlaySounds();
+        
+        // Ждем нажатия игрока для продолжения
+        waitingForInput = true;
+    }
 
-        // Вызываем действие после катсцены
-        onCutsceneEnd?.Invoke();
+    private void ShowNextSlide()
+    {
+        currentSlide++;
+        
+        if (currentSlide < slides.Length)
+        {
+            StartCoroutine(ShowSlideWithTransition());
+        }
+        else
+        {
+            // Завершаем катсцену
+            StartCoroutine(FinishCutscene());
+        }
+    }
+
+    private IEnumerator ShowSlideWithTransition()
+    {
+        // Плавный переход к черному
+        yield return StartCoroutine(FadeToBlack());
+        
+        // Плавный переход к следующему слайду
+        yield return StartCoroutine(FadeFromBlackToSlide(slides[currentSlide].slide));
+        
+        // Проверяем звуки для текущего слайда
+        CheckAndPlaySounds();
+        
+        // Снова ждем нажатия игрока
+        waitingForInput = true;
     }
 
     // Плавный переход от черного к слайду
@@ -108,7 +113,6 @@ public class StartCutscene : MonoBehaviour
         {
             timer += Time.deltaTime;
             float progress = timer / fadeDuration;
-            // Плавно меняем от черного к белому (полная видимость слайда)
             displayImage.color = Color.Lerp(Color.black, Color.white, progress);
             yield return null;
         }
@@ -126,7 +130,6 @@ public class StartCutscene : MonoBehaviour
         {
             timer += Time.deltaTime;
             float progress = timer / fadeDuration;
-            // Плавно меняем к черному
             displayImage.color = Color.Lerp(startColor, Color.black, progress);
             yield return null;
         }
@@ -145,53 +148,11 @@ public class StartCutscene : MonoBehaviour
         {
             timer += Time.deltaTime;
             float progress = timer / fadeDuration;
-            // Плавно меняем от черного к прозрачному
             displayImage.color = new Color(0, 0, 0, 1 - progress);
             yield return null;
         }
 
         displayImage.color = new Color(0, 0, 0, 0);
-    }
-
-    private void PlayFirstSound()
-    {
-        if (firstAudioClip != null && audioSource != null)
-        {
-                audioSource.PlayOneShot(firstAudioClip);
-        }
-    }
-
-    private void PlaySecondSound()
-    {
-        if (secondAudioClip != null && audioSource != null)
-        {
-            audioSource.Stop();
-            audioSource.PlayOneShot(secondAudioClip);
-        }
-    }
-    
-
-    private void SkipToNext()
-    {
-        StopAllCoroutines();
-
-        currentSlide++;
-
-        if (currentSlide < slides.Length)
-        {
-            // Показываем следующий слайд с черным переходом
-            StartCoroutine(FadeFromBlackToSlide(slides[currentSlide].slide));
-
-            // Проверяем нужно ли начать звуки
-            CheckAndPlaySounds();
-
-            StartCoroutine(WaitAndContinue());
-        }
-        else
-        {
-            // Запускаем финальное затемнение
-            StartCoroutine(FinishCutscene());
-        }
     }
 
     private void CheckAndPlaySounds()
@@ -200,6 +161,10 @@ public class StartCutscene : MonoBehaviour
         if (!firstSoundPlayed && currentSlide >= firstSoundStartSlide)
         {
             PlayFirstSound();
+            if (startDialog != null && dialogue1 != null && dialogue1.Length > 0)
+            {
+                startDialog.StartDialogue(dialogue1);
+            }
             firstSoundPlayed = true;
         }
         
@@ -211,27 +176,20 @@ public class StartCutscene : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitAndContinue()
+    private void PlayFirstSound()
     {
-        // Ждем указанное для текущего слайда время
-        yield return new WaitForSeconds(slides[currentSlide].duration);
-        
-        currentSlide++;
-        
-        if (currentSlide < slides.Length)
+        if (firstAudioClip != null && audioSource != null)
         {
-            // Переход к черному и затем к следующему слайду
-            yield return StartCoroutine(FadeToBlack());
-            yield return StartCoroutine(FadeFromBlackToSlide(slides[currentSlide].slide));
-            
-            // Проверяем нужно ли начать звуки
-            CheckAndPlaySounds();
-            
-            StartCoroutine(WaitAndContinue());
+            audioSource.PlayOneShot(firstAudioClip);
         }
-        else
+    }
+
+    private void PlaySecondSound()
+    {
+        if (secondAudioClip != null && audioSource != null)
         {
-            StartCoroutine(FinishCutscene());
+            audioSource.Stop();
+            audioSource.PlayOneShot(secondAudioClip);
         }
     }
 
@@ -246,19 +204,6 @@ public class StartCutscene : MonoBehaviour
 
         // Вызываем действие после катсцены
         onCutsceneEnd?.Invoke();
-    }
-
-    public void StopCutscene()
-    {
-        StopAllCoroutines();
-        
-        // Останавливаем все AudioSource
-        AudioSource[] allAudioSources = GetComponents<AudioSource>();
-        foreach (AudioSource source in allAudioSources)
-        {
-            source.Stop();
-        }
-        
-        onCutsceneEnd?.Invoke();
+        startDialog.StartDialogue(dialogue2);
     }
 }
