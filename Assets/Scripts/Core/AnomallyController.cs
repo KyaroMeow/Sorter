@@ -9,6 +9,7 @@ public class AnomallyController : MonoBehaviour
     [SerializeField] private GameObject sphere;
     [SerializeField] private GameObject endCube;
     [SerializeField] private BeglecAnim beglec;
+    [SerializeField] private GameObject choicePanel;
 
     private int positionId = 0;
 
@@ -32,7 +33,7 @@ public class AnomallyController : MonoBehaviour
     private void EndAnomally()
     {
         beglec.HandOut();
-        CutSceneManager.Instance.StartChoiseCutScene();
+        CutsceneManager.Instance.PlayBeglecCutscene(() => choicePanel.SetActive(true));
     }
     private void GoToNextPosition()
     {
