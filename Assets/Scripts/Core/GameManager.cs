@@ -40,7 +40,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        CutSceneManager.Instance.StartInitialCutScene();
+        AudioManager.Instance.Play("DroneSound");
+        CutsceneManager.Instance.PlayStartCutscene(() =>
+        {
+            AudioManager.Instance.Play("Wake up");
+            AudioManager.Instance.Stop("DroneSound");
+            AudioManager.Instance.Play("Conveyor");
+        });
     }
     void Update()
     {
@@ -111,7 +117,7 @@ public class GameManager : MonoBehaviour
     }
     public void CorrectSort()
     {
-        AudioManager.Instance.PlayAgree();
+        AudioManager.Instance.Play("CorrectSort");
         lights.ChangeColorGreen();
         totalItemsProcessed++;
         if (currentItem != null) Destroy(currentItem);
@@ -121,7 +127,7 @@ public class GameManager : MonoBehaviour
     }
     public void WrongSort()
     {
-        AudioManager.Instance.PlayDisAgree();
+        AudioManager.Instance.Play("IncorrectSort");
         lights.ChangeColorRed();
         playerInteract.DropItem();
         totalItemsProcessed++;
@@ -158,7 +164,7 @@ public class GameManager : MonoBehaviour
     }
     public void BadEnd()
     {
-        CutSceneManager.Instance.StartLooseCutScene();
+        CutsceneManager.Instance.PlayLooseCutscene(() => SceneManager.LoadScene(0));
     }
     public void SpawnItem()
     {
