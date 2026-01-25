@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2562124552764618850}
   - component: {fileID: 5349810676765044026}
   - component: {fileID: -3471970633970805018}
+  - component: {fileID: 823341753855827412}
   m_Layer: 6
   m_Name: cigaretts
   m_TagString: Item
@@ -88,6 +89,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &823341753855827412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542740545509734821}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.42, y: 0.58, z: 0.26}
+  m_Center: {x: 0.03, y: 0.05, z: 0.06}
 --- !u!1001 &209760495385456786
 PrefabInstance:
   m_ObjectHideFlags: 0

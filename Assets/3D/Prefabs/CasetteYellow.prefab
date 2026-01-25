@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1994724452868214440}
   - component: {fileID: -4362645473851925756}
   - component: {fileID: 5616922019006084957}
+  - component: {fileID: 3872709153308410591}
   m_Layer: 6
   m_Name: CasetteYellow
   m_TagString: Item
@@ -88,6 +89,27 @@ MonoBehaviour:
   - {fileID: 7166344692272371808}
   stainRenderer: {fileID: 0}
   barcode: {fileID: 4881181655351760354}
+--- !u!65 &3872709153308410591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071571188851197091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12, y: 0.56, z: 0.82}
+  m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!1001 &312750244311477572
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7334477029648819180}
   - component: {fileID: -3809808797046942398}
   - component: {fileID: 1743712397233841224}
+  - component: {fileID: 6386839479466889311}
   m_Layer: 6
   m_Name: CasetteGreen
   m_TagString: Item
@@ -90,6 +91,27 @@ MonoBehaviour:
   - {fileID: 5453691609775903166}
   stainRenderer: {fileID: 0}
   barcode: {fileID: 3483181784574665884}
+--- !u!65 &6386839479466889311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750317507915971984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12, y: 0.56, z: 0.82}
+  m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!1001 &2522990977489417733
 PrefabInstance:
   m_ObjectHideFlags: 0

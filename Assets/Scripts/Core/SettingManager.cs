@@ -12,7 +12,7 @@ public class SettingManager : MonoBehaviour
     public float wrongBarcodeChance;
     public float defectChance;
     public float scratchesChance;
-    public bool timer;
+    public bool timer = true;
     public string currentDifficulty;
     private void Awake()
     {

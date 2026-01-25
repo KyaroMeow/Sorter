@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3833632361777354047}
   - component: {fileID: 8927209806651665838}
   - component: {fileID: 3420355613995839423}
+  - component: {fileID: 6370616813944773688}
+  - component: {fileID: 3899873284738888134}
   m_Layer: 6
   m_Name: CubeSphere
   m_TagString: Anomally
@@ -82,6 +84,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6370616813944773688
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554604064987432285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.61, y: 0.59, z: 0.61}
+  m_Center: {x: 0.16, y: -0.18, z: 0.12}
+--- !u!114 &3899873284738888134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554604064987432285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8479ea0a3c47979033b25bdd19b10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2028265897576312567
 PrefabInstance:
   m_ObjectHideFlags: 0

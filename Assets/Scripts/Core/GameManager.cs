@@ -7,19 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Current Game State")]
-    public GameObject currentItem;
+    [Header("Current Game State")] public GameObject currentItem;
     public int currentMistakes = 0;
     public int totalItemsProcessed = 0;
     public float currentTime = 0;
-    public bool isGameActive = true;
     public bool isGameStarted = false;
     public bool isTimerWork = false;
 
     public ItemSpawner itemSpawner;
     public Hands hands;
-    public Conveyor conveyor;
-    public PlayerInteract playerInteract;
     public ScanUI scanUI;
     public GameObject scaner;
     public GameObject scanerOnTable;
@@ -38,6 +34,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void Start()
     {
         AudioManager.Instance.Play("DroneSound");
@@ -48,6 +45,7 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.Play("Conveyor");
         });
     }
+
     void Update()
     {
         if (isGameStarted)
@@ -55,20 +53,24 @@ public class GameManager : MonoBehaviour
             UpdateTimer();
         }
     }
+
     public void StartTimer()
     {
         isTimerWork = true;
     }
+
     public void StartGame()
     {
         isGameStarted = true;
         isTimerWork = true;
         SpawnItem();
     }
+
     public void StartAnomally()
     {
         anomallyController.StartAnomally();
     }
+
     private void UpdateTimer()
     {
         if (isTimerWork && SettingManager.Instance.timer)
@@ -83,20 +85,24 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     public void SetVolume()
     {
         SettingManager.Instance.volumeValue = volumeSlider.value;
     }
+
     public void ToggleScaner()
     {
         scaner.SetActive(!scaner.activeSelf);
         scanerOnTable.SetActive(!scaner.activeSelf);
     }
+
     public void ToggleScanerOff()
     {
         scaner.SetActive(false);
         scanerOnTable.SetActive(true);
     }
+
     public void SortItem(bool selectedVariant)
     {
         if (currentItem == null) return;
@@ -111,25 +117,26 @@ public class GameManager : MonoBehaviour
             WrongSort();
         }
     }
+
     public void ShowScanResult()
     {
         scanUI.ShowResult(currentItem.GetComponent<Item>().barcodeShowsGood);
     }
+
     public void CorrectSort()
     {
         AudioManager.Instance.Play("CorrectSort");
         lights.ChangeColorGreen();
         totalItemsProcessed++;
         if (currentItem != null) Destroy(currentItem);
-        playerInteract.DropItem();
         StartTimer();
         SpawnItem();
     }
+
     public void WrongSort()
     {
         AudioManager.Instance.Play("IncorrectSort");
         lights.ChangeColorRed();
-        playerInteract.DropItem();
         totalItemsProcessed++;
         currentMistakes++;
         CheckForDamage();
@@ -137,9 +144,11 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
         Destroy(currentItem);
         SpawnItem();
     }
+
     private void CheckForDamage()
     {
         int mistakesPerDamage = GetMistakesPerDamage();
@@ -148,6 +157,7 @@ public class GameManager : MonoBehaviour
             hands.PlayTakeDamage();
         }
     }
+
     private int GetMistakesPerDamage()
     {
         switch (SettingManager.Instance.currentDifficulty)
@@ -162,10 +172,12 @@ public class GameManager : MonoBehaviour
                 return 3;
         }
     }
+
     public void BadEnd()
     {
         CutsceneManager.Instance.PlayLooseCutscene(() => SceneManager.LoadScene(0));
     }
+
     public void SpawnItem()
     {
         if (totalItemsProcessed == SettingManager.Instance.anomalyItemNum)
@@ -182,28 +194,15 @@ public class GameManager : MonoBehaviour
             currentTime = SettingManager.Instance.timePerItem;
         }
     }
-    public void PauseGame()
-    {
-        isGameActive = false;
-        Time.timeScale = 0f;
-    }
 
     public void ResumeGame()
     {
-        isGameActive = true;
         Time.timeScale = 1f;
         AudioListener.pause = false;
     }
-    public void StopConveyor()
-    {
-        conveyor.canMove = false;
-    }
+
     private void GameOver()
     {
         SceneManager.LoadScene(0);
-    }
-    public void StartConveyor()
-    {
-        conveyor.canMove = true;
     }
 }

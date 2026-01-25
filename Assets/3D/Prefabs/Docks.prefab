@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8296871272010306073}
   - component: {fileID: 482819010604717479}
   - component: {fileID: 3296483916019557793}
+  - component: {fileID: 49608984598162500}
   m_Layer: 6
   m_Name: Docks
   m_TagString: Item
@@ -101,6 +102,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &49608984598162500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487105028965910130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.89, y: 0.29, z: 1.24}
+  m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!1001 &500613562803091682
 PrefabInstance:
   m_ObjectHideFlags: 0
