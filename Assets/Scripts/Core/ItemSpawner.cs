@@ -32,6 +32,11 @@ public class ItemSpawner : MonoBehaviour
 
     private void SetupItem(GameObject itemObject)
     {
+        if (!itemObject.TryGetComponent<ConveyorItemInteractable>(out _))
+        {
+            itemObject.AddComponent<ConveyorItemInteractable>();
+        }
+        
         Item item = itemObject.GetComponent<Item>();
         if (item == null) return;
 

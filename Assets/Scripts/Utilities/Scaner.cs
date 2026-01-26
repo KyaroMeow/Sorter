@@ -24,26 +24,26 @@ public class Scaner : MonoBehaviour
     
     private void ScanItem()
     {
-    Collider[] hitColliders = Physics.OverlapBox(
-        transform.position + transform.forward * scanDistance * 0.5f,
-        scanSize * 0.5f,
-        transform.rotation,
-        scanLayerMask
-    );
-    foreach (Collider collider in hitColliders)
-    {
-        if (collider.isTrigger && collider.CompareTag("Code"))
+        Collider[] hitColliders = Physics.OverlapBox(
+            transform.position + transform.forward * scanDistance * 0.5f,
+            scanSize * 0.5f,
+            transform.rotation,
+            scanLayerMask
+        );
+        foreach (Collider collider in hitColliders)
         {
-            Item item = GameManager.Instance.currentItem.GetComponent<Item>();
-            if (item != null)
+            if (collider.isTrigger && collider.CompareTag("Code"))
             {
-                GameManager.Instance.ShowScanResult();
-                GameManager.Instance.ToggleScanerOff();
-                return;
+                Item item = GameManager.Instance.currentItem.GetComponent<Item>();
+                if (item != null)
+                {
+                    GameManager.Instance.ShowScanResult();
+                    GameManager.Instance.ToggleScanerOff();
+                    return;
+                }
             }
         }
     }
-}
     
     private void FollowCursorYZ()
     {

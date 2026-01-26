@@ -20,12 +20,13 @@ public class CutsceneStep
 
 public class Cutscene : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private Image cutsceneImage;
-    [SerializeField] private Image fadeBlackImage;
-    [SerializeField] private DialogText dialogText;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private GameObject choicePanel;
-    [SerializeField] private List<CutsceneStep> cutsceneSteps;
+    public Image cutsceneImage;
+    public Image fadeBlackImage;
+    public DialogText dialogText;
+    public AudioSource audioSource;
+    public GameObject choicePanel;
+    public List<CutsceneStep> cutsceneSteps;
+    public bool skipCutscene;
     
     private bool _advance;
 
@@ -44,6 +45,8 @@ public class Cutscene : MonoBehaviour, IPointerClickHandler
     {
         foreach (var step in cutsceneSteps)
         {
+            if (skipCutscene)
+                continue;
 
             if (step.image)
             {

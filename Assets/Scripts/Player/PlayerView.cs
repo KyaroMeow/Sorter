@@ -52,6 +52,13 @@ public class PlayerView : MonoBehaviour
         canRotate = true;
         canLook = true;
     }
+    
+    public void BlockMovement()
+    {
+        canRotate = false;
+        canLook = false;
+    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) TogglePause();
