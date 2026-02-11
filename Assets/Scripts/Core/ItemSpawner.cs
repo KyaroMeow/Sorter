@@ -49,14 +49,14 @@ public class ItemSpawner : MonoBehaviour
         float roll = Random.Range(0f, 1f);
 
         // Пятно
-        if (roll <= SettingManager.Instance.defectChance)
+        if (roll <= SettingManager.Instance.currentDifficulty.defectChance)
         {
             hasStain = true;
         }
 
         // Отсутствие штрихкода
         roll = Random.Range(0f, 1f);
-        if (roll <= SettingManager.Instance.noBarcodeChance)
+        if (roll <= SettingManager.Instance.currentDifficulty.noBarcodeChance)
         {
             hasBarcode = false;
         }
@@ -65,7 +65,7 @@ public class ItemSpawner : MonoBehaviour
         if (hasBarcode)
         {
             roll = Random.Range(0f, 1f);
-            if (roll <= SettingManager.Instance.wrongBarcodeChance)
+            if (roll <= SettingManager.Instance.currentDifficulty.wrongBarcodeChance)
             {
                 barcodeShowsGood = false;
             }
@@ -73,7 +73,7 @@ public class ItemSpawner : MonoBehaviour
 
         // Царапины
         roll = Random.Range(0f, 1f);
-        if (roll <= SettingManager.Instance.scratchesChance)
+        if (roll <= SettingManager.Instance.currentDifficulty.scratchesChance)
         {
             hasScratches = true;
         }

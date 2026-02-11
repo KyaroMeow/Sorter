@@ -48,7 +48,7 @@ public class SettingButtons : MonoBehaviour
     }
     public void SaveSettings()
     {
-        SettingManager.Instance.SetDifficult(diffText.text);
+        SettingManager.Instance.SetDifficulty(diffText.text);
         SettingManager.Instance.volumeValue = volumeSlider.value;
         if (currentTimerIndex == 0)
         {
@@ -64,9 +64,4 @@ public class SettingButtons : MonoBehaviour
         diffText.text = difficulties[currentDiffIndex];
         timerText.text = timerState[currentTimerIndex];
     }
-
-
-
-
-
 }

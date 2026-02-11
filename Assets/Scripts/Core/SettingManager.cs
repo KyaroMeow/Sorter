@@ -1,19 +1,24 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SettingManager : MonoBehaviour
 {
     public static SettingManager Instance;
+    [Header("Доступные сложности")]
+    public List<Difficult> availableDifficulties;
+
+    [Header("Текущая сложность")]
+    public Difficult currentDifficulty;
+
+    [Header("Настройки по умолчанию")]
+    public string defaultDifficultyName = "NORMAL";
+
+    [Header("Настройка звука")]
     public float volumeValue;
-    public float timePerItem;
-    public int maxMistakes;
-    public int anomalyItemNum;
-    public int BombNum;
-    public float noBarcodeChance;
-    public float wrongBarcodeChance;
-    public float defectChance;
-    public float scratchesChance;
+
+    [Header("Таймер")]
     public bool timer = true;
-    public string currentDifficulty;
+
     private void Awake()
     {
         if (Instance == null)
@@ -28,49 +33,25 @@ public class SettingManager : MonoBehaviour
     }
     void Start()
     {
-        SetDifficult("NORMAL");
+        SetDifficulty(defaultDifficultyName);
     }
     void Update()
     {
         AudioListener.volume = volumeValue;
     }
-    public void SetDifficult(string diffName)
+    public void SetDifficulty(string diffName)
     {
-        switch (diffName)
+        var difficulty = availableDifficulties.Find(d =>
+            d.difficultyName.ToUpper() == diffName.ToUpper());
+
+        if (difficulty != null)
         {
-            case "EASY":
-                currentDifficulty = "EASY";
-                scratchesChance = 0.2f;
-                wrongBarcodeChance = 0.1f;
-                defectChance = 0.1f;
-                noBarcodeChance = 0.1f;
-                anomalyItemNum = 10;
-                BombNum = 20;
-                timePerItem = 90f;
-                maxMistakes = 15;
-                break;
-            case "NORMAL":
-                currentDifficulty = "NORMAL";
-                scratchesChance = 0.1f;
-                wrongBarcodeChance = 0.1f;
-                defectChance = 0.1f;
-                noBarcodeChance = 0.1f;
-                anomalyItemNum = 20;
-                BombNum = 40;
-                timePerItem = 60f;
-                maxMistakes = 10;
-                break;
-            case "HARD":
-                currentDifficulty = "HARD";
-                scratchesChance = 0.3f;
-                wrongBarcodeChance = 0.2f;
-                defectChance = 0.1f;
-                noBarcodeChance = 0.1f;
-                anomalyItemNum = 30;
-                BombNum = 50;
-                timePerItem = 30f;
-                maxMistakes = 5;
-                break;
+            currentDifficulty = difficulty;
+            Debug.Log($"Сложность изменена на: {currentDifficulty.difficultyName}");
+        }
+        else
+        {
+            Debug.LogWarning($"Сложность {diffName} не найдена");
         }
     }
 

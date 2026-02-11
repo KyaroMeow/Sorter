@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         totalItemsProcessed++;
         currentMistakes++;
         CheckForDamage();
-        if (currentMistakes > SettingManager.Instance.maxMistakes)
+        if (currentMistakes > SettingManager.Instance.currentDifficulty.maxMistakes)
         {
             GameOver();
         }
@@ -160,13 +160,13 @@ public class GameManager : MonoBehaviour
 
     private int GetMistakesPerDamage()
     {
-        switch (SettingManager.Instance.currentDifficulty)
+        switch (SettingManager.Instance.currentDifficulty.difficultyName)
         {
-            case "Easy":
+            case "EASY":
                 return 3;
-            case "Normal":
+            case "NORMAL":
                 return 2;
-            case "Hard":
+            case "HARD":
                 return 1;
             default:
                 return 3;
@@ -180,18 +180,18 @@ public class GameManager : MonoBehaviour
 
     public void SpawnItem()
     {
-        if (totalItemsProcessed == SettingManager.Instance.anomalyItemNum)
+        if (totalItemsProcessed == SettingManager.Instance.currentDifficulty.anomalyItemNum)
         {
             itemSpawner.SpawnAnomalyItem();
         }
-        else if (totalItemsProcessed == SettingManager.Instance.BombNum)
+        else if (totalItemsProcessed == SettingManager.Instance.currentDifficulty.bombNum)
         {
             itemSpawner.SpawnBomb();
         }
         else
         {
             itemSpawner.SpawnItem();
-            currentTime = SettingManager.Instance.timePerItem;
+            currentTime = SettingManager.Instance.currentDifficulty.timePerItem;
         }
     }
 
