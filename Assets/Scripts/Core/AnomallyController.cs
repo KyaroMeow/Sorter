@@ -32,7 +32,10 @@ public class AnomallyController : MonoBehaviour
     }
     private void EndAnomally()
     {
+        if (beglec != null)
+        {
         beglec.HandOut();
+        }
         CutsceneManager.Instance.PlayBeglecCutscene(() => choicePanel.SetActive(true));
     }
     private void GoToNextPosition()
